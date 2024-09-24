@@ -1,10 +1,13 @@
 
 import './App.css'
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-import Footer from './Components/Footer/Footer'
+
 import Header from './Components/Header/Header'
-import Home_Img from './Components/Home_Img/Home_Img'
+import Home from './Components/Home/Home'
 import Category from './Components/Category/Category'
+import Footer from './Components/Footer/Footer'
+import FilterCategory from './Components/Category/FilterCategory'
+import FilterDetails from './Components/Category/FilterDetails'
 
 
 function App() {
@@ -15,14 +18,15 @@ function App() {
         <Router>
     <Header/>
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
+        <Route path='/' element={<Home/>} />
         {/* <Route path="/Login" element={<Login />} />     */}
-        {/* <Route path="/Category" element={<CategoryProducts />} />     */}
+        {/* <Route path="/Category" element={<Category />} />     */}
+        {/* <Route path="/FilterCategory" element={<FilterCategory />} />     */}
           
       </Routes>
-        {/* <Home_Img></Home_Img> */}
-        {/* <Category/> */}
-    {/* <Footer/> */}
+      
+       <FilterDetails></FilterDetails>
+    <Footer/>
   </Router>
 
 

@@ -34,7 +34,7 @@ const Footer = () => {
                   <div className="flex flex-col px-2 gap-5">
                     <h3 className="font-bold text-xl">Connect with Us</h3>
                     
-                    <div className="icons flex gap-12 cursor-pointer">
+                    <div className="icons flex gap-5 cursor-pointer">
                       <div className="bg-[#3d5a9c] text-3xl rounded-full p-2">
                     <TbBrandFacebook className="  "/></div>
                     <div className="bg-[#1ba1ee] text-3xl rounded-full p-2">

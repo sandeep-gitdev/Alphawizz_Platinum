@@ -9,11 +9,11 @@ const Header = () => {
    
           return (
              <>
-                 <div className="flex items-center justify-between m-5">
+                 <div className="flex items-center justify-between m-2">
                     <div className="flex items-center gap-6">
                        <img className="max-w-40 max-h-16 cursor-pointer" src="Alpha_logo.png" alt="company_logo" />
                        
-                       <div className="flex justify-between border border-black p-3 rounded-xl w-[700px] opacity-40 bg-gray-200">
+                       <div className="flex justify-between border border-black p-3 rounded-xl w-[500px] opacity-40 bg-gray-200">
                        <input  type="text" placeholder="Search for products" className="bg-gray-200 cursor-pointer"/>
                        <IoSearch className="text-xl"/>
                        </div>
@@ -21,8 +21,8 @@ const Header = () => {
 
                        <div className="flex items-center gap-5 mr-4">
                             <button className="border-2 text-[#49A6A2] border-[#49A6A2] rounded-md p-2">Login</button>
-                            <FaRegHeart className="text-[#49A6A2] text-3xl cursor-pointer" />
-                            <FaCartPlus className="text-[#49A6A2] text-3xl cursor-pointer" />
+                            <FaRegHeart className="text-[#49A6A2] text-2xl cursor-pointer" />
+                            <FaCartPlus className="text-[#49A6A2] text-2xl cursor-pointer" />
                        </div>
 
                  </div>
