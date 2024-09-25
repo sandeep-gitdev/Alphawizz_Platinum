@@ -3,6 +3,8 @@ import { FaCartPlus } from "react-icons/fa";
 
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate} from "react-router-dom";
+
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
@@ -18,6 +20,8 @@ const Products = () => {
          const [loading, setLoading] = useState(true);
          const [error, setError] = useState('');
          
+         const navigate = useNavigate();
+
          useEffect(() => {
                 const fetchApi = async () => {
                     try {
@@ -39,6 +43,14 @@ const Products = () => {
 
          if (loading) return <p>Loading...</p>
          if (error) return <p>{error}</p>
+
+
+             function handleImageClick (e) {
+                  console.log(e.target.id);
+               const ProductsFilter = (Products.find((item)=>{return item.id==e.target.id}))
+               navigate("/ShoppingCart" , {state: ProductsFilter})
+             }
+             
       
           return (
             <>
@@ -85,7 +97,7 @@ const Products = () => {
                                    
                                <div className="">
                         <div key={id} className="h">
-                         <img src={product.image} alt="" className="h-36 w-40"/>
+                         <img src={product.image} alt="" className="h-36 w-40" id={product.id} onClick={handleImageClick}/>
                          </div>
                   <div className=" flex gap-16 w-64  absolute top-3 left-2">
                          <p className="bg-[#49A6A2] text-white rounded-r-lg text-md px-2" >5% OFF</p>

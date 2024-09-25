@@ -1,9 +1,50 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate} from "react-router-dom";
+import axios from "axios";
+import { useState, useEffect, } from "react";
 
 const FilterCategory = () => {
     
             const Location =  useLocation();
             const filterData =  Location.state
+             console.log(filterData)
+
+              // for  Product Api item details  
+               
+            const navigate = useNavigate();
+
+            const [data, setData] = useState([]);
+            const [loading, setLoading] = useState(true);
+            const [error, setError] = useState('');
+         
+
+            useEffect(() => {
+                   const fetchApi = async () => {
+                       try {
+                          const response = await axios.post('https://alphasilver.productsalphawizz.com/app/v1/api/get_products');
+                          console.log(response.data.array)
+                          setData(response.data.data);
+                       } catch (err) {
+                         setError('Error fetching data');
+                       } finally {
+                          setLoading(false);
+                       }
+                   };
+         
+                   fetchApi();
+         
+            },[]);
+         
+            if (loading) return <p>Loading...</p>
+            if (error) return <p>{error}</p>
+
+       
+
+          function handleImageClick (e) {
+               console.log(e.target.id);
+               const filterElement = (data.filter((item)=>{return item.category_id==e.target.id}))
+               console.log(filterElement)
+               navigate("/FilterDetails" , {state: filterElement})
+          };
 
       return (
           <>
@@ -28,7 +69,8 @@ const FilterCategory = () => {
                                              <>
                                            
                                                <div key={id} className="h-64 pt-6 mx-6">
-                                      <img className=" border-2 border-[#49A6A2] rounded-full w-40 h-40"  src={item.image} alt="" />
+                     <img className=" border-2 border-[#49A6A2] rounded-full w-40 h-40"  src={item.image} alt=""
+                     id={item.id} onClick={handleImageClick}/>
                                    
                                       <p className=" text-center mt-5 ">{item.name}</p>
                                       </div>
