@@ -32,7 +32,7 @@ const ShoppingCart = () => {
                          <div className="flex ">
                           <p>Home /</p>
                           <p>Category /</p>
-                          <p>Products /</p>
+                          <p>Products </p>
                          </div>
                      </div>
                    </div>   

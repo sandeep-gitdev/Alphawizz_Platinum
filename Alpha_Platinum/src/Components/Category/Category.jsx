@@ -42,7 +42,7 @@ const Category = () => {
 
           function handleImageClick (e) {
                 console.log(e.target.id);
-                const filterProduct = (data.find((item)=>{return item.id==e.target.id}))
+                const filterProduct = data.find((item)=>{return item.id==e.target.id})
                 navigate("/FilterCategory" , {state: filterProduct})
            };
 

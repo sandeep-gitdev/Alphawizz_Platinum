@@ -69,7 +69,7 @@ const Products = () => {
 
 
                
-                   <div className="">
+                   <div className="mb-3 ">
 
                    <Swiper 
                            slidesPerView={6}
@@ -84,7 +84,7 @@ const Products = () => {
                                     }}
                                     navigation={true}
                                     modules={[Autoplay, Pagination, Navigation]}
-                                    className="mySwiper"
+                                    className="mySwiper h-[350px]"
                                     >
 
                       {
@@ -93,7 +93,7 @@ const Products = () => {
                               return (
 
                                  <SwiperSlide>
-                                 <div className="m-1 flex items-center justify-center flex-col border-2 border-grey w-auto rounded-md h-[350px] relative">
+                                 <div className="m-1 flex items-center justify-center flex-col border-2 border-grey w-auto rounded-md h-[300px] relative">
                                    
                                <div className="">
                         <div key={id} className="h">
