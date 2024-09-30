@@ -61,7 +61,7 @@ const Category = () => {
                        <div className="">
                            
                        <Swiper 
-                           slidesPerView={7}
+                           slidesPerView={6}
                                     spaceBetween={30}
                                     centeredSlides={false}
                                     autoplay={{
@@ -73,7 +73,21 @@ const Category = () => {
                                     }}
                                     navigation={true}
                                     modules={[Autoplay, Pagination, Navigation]}
-                                    className="mySwiper"
+                                    className="mySwiper "
+                                    breakpoints={{
+                                      640: {
+                                          slidersPerview: 1,
+                                          spaceBetween: 20,
+                                      },
+                                      768: {
+                                          slidesPerView: 3,
+                                          spaceBetween: 30,
+                                      },
+                                      1024: {
+                                          slidersPerview: 6,
+                                          spaceBetween: 30,
+                                      },
+                                  }}
                                     >
                              {
 
@@ -81,15 +95,26 @@ const Category = () => {
                                   data.map((items,id) => {
                                     return(
 
-                                  <SwiperSlide>
-                                      <div key={id} className="h-64">
+
+                                      <SwiperSlide key={id}>
+                                      <div  className="h-64 flex flex-col items-center">
                                       <img className=" border-2 border-[#49A6A2] rounded-full w-40 h-40"  src={items.image} alt={items.name} id={items.id} onClick={handleImageClick}/>
                                    
-                                      <p className=" text-center mt-5 ">{items.name}</p>
+                                      <p className="">{items.name}</p>
                                       </div>
 
                                     
                                       </SwiperSlide>
+
+                                  // <SwiperSlide key={id}>
+                                  //     <div  className="h-64 flex flex-col items-center">
+                                  //     <img className=" border-2 border-[#49A6A2] rounded-full w-40 h-40"  src={items.image} alt={items.name} id={items.id} onClick={handleImageClick}/>
+                                   
+                                  //     <p className=" text-center mt-5 ">{items.name}</p>
+                                  //     </div>
+
+                                    
+                                  //     </SwiperSlide>
                                     )
                                  })
 

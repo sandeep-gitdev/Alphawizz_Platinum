@@ -53,7 +53,7 @@ import Country_code from "./Country_code.json"
   };
 
   const handlePassword = (e) => {
-   console.log(e.target.value);
+   // console.log(e.target.value);
    
    setPassword(e.target.value);
    if (err.password) {
@@ -65,6 +65,8 @@ import Country_code from "./Country_code.json"
             e.preventDefault();
             setErr({});
             // setSuccessmsg(''); 
+            setMobile('');
+            setPassword('');
             
             const validationErr = validate();
             if(Object.keys(validationErr).length > 0) {

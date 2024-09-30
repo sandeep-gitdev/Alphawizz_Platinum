@@ -42,12 +42,12 @@ const Header = () => {
           return (
              <>
             
-                 <div className="flex items-center justify-between m-2">
-               <Link to='/'>    <div className="flex items-center gap-6">
-                       <img className="max-w-40 max-h-16 cursor-pointer" src="Alpha_logo.png" alt="company_logo" />
+                 <div className="flex flex-col md:flex-row items-center justify-between m-2">
+               <Link to='/'>    <div className="flex items-center gap-6 mb-4 md:mb-0">
+                       <img className="max-w-[10rem] max-h-16 cursor-pointer" src="Alpha_logo.png" alt="company_logo" />
                        
-                       <div className="flex justify-between border border-black p-3 rounded-xl w-[500px] opacity-40 bg-gray-200">
-                       <input  type="text" placeholder="Search for products" className="bg-gray-200 border-none outline-none" />
+                       <div className="flex justify-between border border-black p-3 rounded-xl w-full  md:w-[500px] opacity-40 bg-gray-200">
+                       <input  type="text" placeholder="Search for products" className="bg-gray-200 border-none outline-none w-full" />
                        <IoSearch className="text-xl"/>
                        </div>
                        </div>  </Link> 
@@ -62,19 +62,32 @@ const Header = () => {
 
                  </div>
 
-                 <nav className=" bg-[#49A6A2] text-[#fff] p-1 text-lg flex items-center justify-around">
-                       <div className="flex items-center gap-2">
+                 <nav className=" bg-[#49A6A2] text-[#fff] p-1 mb-0 text-lg hidden md:flex  items-center justify-around">
+                       <div className="flex items-center gap-2 mb-2 md:mb-0">
                        <IoMenu />
-                        <Link to="/CategoryAll"><h4>Sell All</h4></Link> 
+                        <Link to="/CategoryAll" className="hover:underline"><h4>Sell All</h4></Link> 
                          <div className="h-[37px] border-2 ml-4 border-white"></div>
                        </div>
-                       <button className="" name="Clothing" onClick={handleClick}>Clothing</button>             
-                       <button className="" name="Electronics" onClick={handleClick}>Electronics</button>             
-                       <button className="" name="Home & Kitchen" onClick={handleClick}>Home & Kitchen</button>             
-                       <button className="" name="Beauty & Personal Care" onClick={handleClick}>Beauty & Personal Care</button>             
-                       <button className="" name="Toys & Games" onClick={handleClick}>Toys & Games</button>             
-                       <button className="" name="Grocery & Gourmet Food" onClick={handleClick}>Grocery & Gourment Food</button>             
-                       <button className="" name="Book" onClick={handleClick}>Book</button>             
+                       
+                       {['Clothing', 'Electronics', 'Home & Kitchen', 'Beauty & Personal Care', 'Toys & Games', 'Grocery & Gourmet Food', 'Book'].map((category) => (
+                         <button
+                         key={category}
+                         className="transform hover:translate-y-[-2px] hover:underline transition-transform duration-200 ease-in-out"
+                         name={category}
+                         onClick={handleClick}
+                         >
+                         {category}
+                         </button>
+                        ))}
+                 
+
+                       {/* <button className="hover:underline" name="Clothing" onClick={handleClick}>Clothing</button>             
+                       <button className="hover:underline" name="Electronics" onClick={handleClick}>Electronics</button>             
+                       <button className="hover:underline" name="Home & Kitchen" onClick={handleClick}>Home & Kitchen</button>             
+                       <button className="hover:underline transform hover:translate-y-[-2px] transition-transform duration-200 ease-in-out" name="Beauty & Personal Care" onClick={handleClick}>Beauty & Personal Care</button>             
+                       <button className="hover:underline" name="Toys & Games" onClick={handleClick}>Toys & Games</button>             
+                       <button className="hover:underline" name="Grocery & Gourmet Food" onClick={handleClick}>Grocery & Gourment Food</button>             
+                       <button className="hover:underline" name="Book" onClick={handleClick}>Book</button>              */}
                       
                     </nav>
 

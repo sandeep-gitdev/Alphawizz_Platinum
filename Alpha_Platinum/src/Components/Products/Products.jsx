@@ -72,7 +72,7 @@ const Products = () => {
                    <div className="mb-3 ">
 
                    <Swiper 
-                           slidesPerView={6}
+                           slidesPerView={5}
                                     spaceBetween={30}
                                     centeredSlides={false}
                                     autoplay={{
@@ -84,7 +84,21 @@ const Products = () => {
                                     }}
                                     navigation={true}
                                     modules={[Autoplay, Pagination, Navigation]}
-                                    className="mySwiper h-[350px]"
+                                 className="mySwiper h-[350px]"
+                                   breakpoints={{
+                                       640: {
+                                           slidersPerview: 1,
+                                           spaceBetween: 20,
+                                       },
+                                       768: {
+                                           slidesPerView: 3,
+                                           spaceBetween: 30,
+                                       },
+                                       1024: {
+                                           slidersPerview: 6,
+                                           spaceBetween: 30,
+                                       },
+                                   }}
                                     >
 
                       {
@@ -97,7 +111,13 @@ const Products = () => {
                                    
                                <div className="">
                         <div key={id} className="h">
-                         <img src={product.image} alt="" className="h-36 w-40" id={product.id} onClick={handleImageClick}/>
+                         <img 
+                           src={product.image} 
+                           alt="" 
+                           className="h-36 w-40 cursor-pointer"
+                           id={product.id}
+                           onClick={handleImageClick}
+                           />
                          </div>
                   <div className=" flex gap-16 w-64  absolute top-3 left-2">
                          <p className="bg-[#49A6A2] text-white rounded-r-lg text-md px-2" >5% OFF</p>

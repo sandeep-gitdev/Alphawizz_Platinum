@@ -13,11 +13,11 @@ const Footer = () => {
    return (
      <> 
        <div className="footer flex flex-col  bg-[#1f2136] text-[#fff] ">
-            <div className="footer-info grid grid-cols-3 m-10 gap-8">
+            <div className="footer-info grid grid-cols-1 md:grid-cols-3 m-4 gap-8">
               <div className="flex justify-center">
-                  <img className="max-w-40 max-h-16 cursor-pointer" src="Alpha_logo.png" alt="company_logo" />
+                  <img className="max-w-[10rem] max-h-16 cursor-pointer" src="Alpha_logo.png" alt="company_logo" />
                   </div>
-                  <div className="">
+                  <div className="flex flex-col">
                     <h3 className=" font-bold text-xl">Get to Know Us</h3>
                       <div className="border-2 w-12 my-5 border-[#49A6A2]"></div>
                   <ul className="grid grid-cols-2 gap-3 cursor-pointer">
@@ -36,36 +36,36 @@ const Footer = () => {
                     <h3 className="font-bold text-xl">Connect with Us</h3>
                     
                     <div className="icons flex gap-5 cursor-pointer">
-                <a href="https://www.facebook.com/" target="_blank"> <div className="bg-[#3d5a9c] text-3xl rounded-full p-2">
+                <a href="https://www.facebook.com/" target="_blank"> <div className="bg-[#3d5a9c] hover:scale-105 text-3xl rounded-full p-2 ">
                     <TbBrandFacebook className="  "/></div></a>
-                    <a href="https://x.com/" target="_blank"><div className="bg-[#1ba1ee] text-3xl rounded-full p-2">
+                    <a href="https://x.com/" target="_blank"><div className="bg-[#1ba1ee] hover:scale-105 text-3xl rounded-full p-2">
                     <SlSocialTwitter className=""/></div></a> 
-                    <a href="https://www.instagram.com/" target="_blank"><div className="bg-gradient-to-r from-purple-500 to-pink-500 text-3xl rounded-full p-2 ">
+                    <a href="https://www.instagram.com/" target="_blank"><div className="bg-gradient-to-r from-purple-500 to-pink-500 text-3xl rounded-full p-2 hover:scale-105 ">
                     <BsInstagram className=""/>
                     </div></a> 
-                    <a href="https://www.youtube.com/" target="_blank"> <div className="text-3xl bg-red-600 rounded-full p-2">
+                    <a href="https://www.youtube.com/" target="_blank"> <div className="text-3xl bg-red-600 hover:scale-105 rounded-full p-2">
                     <SlSocialYoutube className=""/>
                     </div></a>   
                     </div>
 
-                  <div className="flex gap-5">
-                    <button className="flex items-center border rounded-lg bg-white text-black px-3">
+                  <div className="flex flex-col md:flex-row gap-5">
+                    <button className="flex items-center hover:scale-105 border rounded-lg bg-white text-black px-3 w-full md:w-auto sm:w-auto  max-w-[200px]">
                       <div className="text-4xl">
                     <BsApple className=""/>
                     </div>
-                    <div className="ml-2">
-                    <p className="text-[12px]">Download on the</p>
+                    <div className="ml-2 text-left">
+                    <p className="text-xs md:text-md sm:text-sm">Download on the</p>
                     <p>App Store</p>
                     </div>
                     </button>
 
-                    <button className="flex items-center border rounded-lg bg-white text-black px-3">
+                    <button className="flex items-center hover:scale-105 border rounded-lg bg-white text-black px-3 w-full sm:w-auto max-w-[200px]">
                     <div className="text-4xl">
                     {/* <IoLogoGooglePlaystore className=""/> */}
                     <img src="playstore.png" alt="" className="min-w-14 h-14 p-2"/>
                     </div>
-                    <div className="ml-2">
-                     <p className="text-[12px]">GET IT ON</p>
+                    <div className="ml-2 text-left">
+                     <p className="text-xs md:text-md  sm:text-sm">GET IT ON</p>
                      <p className="">Google Play</p>
                      </div>
                     </button>
@@ -73,9 +73,9 @@ const Footer = () => {
                   </div>
             </div>
           <hr />  
-            <div className="copy-right flex justify-around m-4">
+            <div className="copy-right flex flex-col md:flex-row justify-around m-4">
                 <p>Copyright © 2024, All Right Reserved Alpha Platinum Private Limited</p>
-                <ul className="flex gap-4">
+                <ul className=" gap-4 justify-center hidden md:flex">
                 <Link to="/"><li>Home</li></Link>
                 <Link to='/Term_condition'><li>Terms & Condition</li></Link> 
                  <Link to="/Privacy_Policy"> <li>Privacy Policy</li></Link>
