@@ -8,14 +8,10 @@ import Country_code from "./Country_code.json"
      const [lrClick, setLRClick] = useState(true)
      const [isLogin, setIsLogin] = useState('login')
      const [mobile , setMobile] = useState("");
+     const [password, setPassword] = useState("");
      const [err, setErr] = useState("");
+     
 
-     const handleMobile=(e)=>{
-      setMobile(e.target.value);
-      // if(mobile.length < 10){
-      //    setErr("less then Ten")
-      // }
-   }
 
      const handleMobileBtn=(e)=>{
       e.preventDefault()
@@ -34,14 +30,59 @@ import Country_code from "./Country_code.json"
          
     }
 
-    // Country dail code
-   //  onClick={() =>   className= {`border-2 p-3 text-white  `}
+
+    const validate = (e) => {
+         const Errors = {};
+         if (mobile.length < 10){
+              Errors.mobile = 'Enter Proper mobile number'
+         }
+
+         if (password.length < 6) {
+               Errors.password = 'Password must be at least 6 characters long'
+         }
+
+         return Errors;
+    }
+
+    const handleMobile = (e) => {
+      setMobile(e.target.value);
+      if(err.mobile) {
+           setErr({ ...err, mobile: ''});
+      }
+     
+  };
+
+  const handlePassword = (e) => {
+   console.log(e.target.value);
+   
+   setPassword(e.target.value);
+   if (err.password) {
+        setErr({ ...err, password: ''});
+   }
+};
+
+       const handleSubmit = (e) => {
+            e.preventDefault();
+            setErr({});
+            // setSuccessmsg(''); 
+            
+            const validationErr = validate();
+            if(Object.keys(validationErr).length > 0) {
+                 setErr(validationErr);
+                 return;
+            }
+                setErr({});
+
+                console.log('Logging in with:', { mobile, password });
+       }
+
+
 
   
 
     return (
        <>
-           <div className=" w-[100%] h-[100%] right-0 left-0 bottom-0 top-0 flex items-center bg-gray-400 fixed" style={{backgroundColor:"rgba(0,0,0,0.5)", zIndex:"3"}} >
+           <div className=" w-[100%] h-[100%] right-0 left-0 bottom-0 top-0 flex items-center box-border bg-gray-400 fixed" style={{backgroundColor:"rgba(0,0,0,0.5)", zIndex:"3"}} >
            <div className="fixed top-[50%] left-[50%] -translate-y-2/4 -translate-x-2/4
            bg-white w-[600px] h-[400px] 
             flex flex-col gap-8" >
@@ -58,38 +99,62 @@ import Country_code from "./Country_code.json"
              </div>
 
                    {
-                     lrClick ? (<div className=" flex flex-col gap-7 mx-10">
-                        <input type="text" placeholder="Mobile number" className="outline-[#49A6A2] border-2 text-lg p-2"/>
-                        <input type="text" placeholder="Password"
-                              className="outline-[#49A6A2] border-2 text-lg p-2"/>
+                     lrClick ? (
+                        <form onSubmit={handleSubmit}>
+                     <div className=" flex flex-col gap-7 mx-10 h-fit box-border">
+                        
+                        <input 
+                           type="text" 
+                           id="mobileNO" 
+                           placeholder="Mobile number"
+                           value={mobile}
+                           onChange={handleMobile}
+                           required
+                           className="outline-[#49A6A2] border-2 text-lg p-2"/>
+                  { err.mobile && <span className="text-red-600">{err.mobile}</span>}
+
+                        <input
+                           type="password" 
+                           placeholder="Password"  id="passwordErr"  
+                           value={password}
+                           onChange={handlePassword}
+                           required
+                           className="outline-[#49A6A2] border-2 text-lg p-2"/>
+                     { err.mobile && <span className="text-red-600">{err.password}</span>}
+
                          <p className="text-red-700 text-right">Forgot Password ?</p>
                                   
-                          <button  className="border-2 bg-[#49A6A2] p-3 text-white">Login</button>
-                          </div>)
+                          <button type="submit"  className="border-2 bg-[#49A6A2] p-3 text-white">Login</button>
+                        
+                          </div>
+                          </form>)
                           :
                           (
                            
                            <div className="flex flex-col gap-7  mx-10">
                               <div className="flex  hover:border-sky-500 border-2">
                               <select name="" id="" className="">
-                              {
+
+                                   {
                                        Country_code.map((country)=> {
                                                  return( 
                                                    <>
-                             <option value={country.dial_code} key={country.code} className="">           
+                                       
+                                        <option value={country.dial_code} key={country.code} className="">           
                                     
-                                      <div className="flex items-center border-none outline-none ">
-                                       <div className="">{country.emoji}</div><div className="">{country.dial_code}</div>
-                                       <div className=""><FaCaretDown />
-                                       </div>
-                                       </div>
-                                      
-                                 
-                                 </option>  
+                                                <div className="flex items-center border-none outline-none ">
+                                                   <div className="">{country.emoji}</div><div className="">{country.dial_code}
+                                                   </div>
+                                                   <div className=""><FaCaretDown />
+                                                   </div>
+                                                   </div>
+                                          </option>  
+                                          
                                                    </>
                                                  )
                                        })
-                              }
+                                    }
+
                               </select>
 
                               <div className="border-2 flex gap-2 text-lg p-2 w-[100%]">
@@ -112,7 +177,7 @@ import Country_code from "./Country_code.json"
 
                                <div className="border-2 flex justify-around mt-[2rem] ">
                               
-                                 <button className="w-[100%] p-4 bg-[#aaaaaa] text-center">Cancel</button>
+                                 <button className="w-[100%] p-4 bg-[#aaaaaa] text-center" onClick={closeModal}>Cancel</button>
                                   <button onClick={handleMobileBtn} className="w-[100%] p-4 bg-[#49A6A2] text-center" >Send OTP</button>
                                  
                                 
