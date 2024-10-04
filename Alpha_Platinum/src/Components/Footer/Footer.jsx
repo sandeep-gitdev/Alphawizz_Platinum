@@ -59,7 +59,7 @@ const Footer = () => {
                     </div>
                     </button>
 
-                    <button className="flex items-center hover:scale-105 border rounded-lg bg-white text-black px-3 w-full sm:w-auto max-w-[200px]">
+                    <button className="flex items-center hover:scale-105 border rounded-lg bg-white text-black px-3 w-full sm:w-auto">
                     <div className="text-4xl">
                     {/* <IoLogoGooglePlaystore className=""/> */}
                     <img src="playstore.png" alt="" className="min-w-14 h-14 p-2"/>

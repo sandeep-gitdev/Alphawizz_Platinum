@@ -37,19 +37,11 @@ const Category = () => {
          if (loading) return <p>Loading...</p>
          if (error) return <p>{error}</p>
 
-
-
-
           function handleImageClick (e) {
                 console.log(e.target.id);
                 const filterProduct = data.find((item)=>{return item.id==e.target.id})
                 navigate("/FilterCategory" , {state: filterProduct})
            };
-
-
-
-
-
 
          return (
           <>
@@ -61,33 +53,31 @@ const Category = () => {
                        <div className="">
                            
                        <Swiper 
-                           slidesPerView={6}
-                                    spaceBetween={30}
-                                    centeredSlides={false}
-                                    autoplay={{
-                                      delay: 1000,
-                                      disableOnInteraction: false,
-                                    }}
-                                    pagination={{
-                                      clickable: true,
-                                    }}
-                                    navigation={true}
-                                    modules={[Autoplay, Pagination, Navigation]}
-                                    className="mySwiper "
-                                    breakpoints={{
-                                      640: {
-                                          slidersPerview: 1,
-                                          spaceBetween: 20,
-                                      },
-                                      768: {
-                                          slidesPerView: 3,
-                                          spaceBetween: 30,
-                                      },
-                                      1024: {
-                                          slidersPerview: 6,
-                                          spaceBetween: 30,
-                                      },
+                                  autoplay={{
+                                                delay: 1000,
+                                                disableOnInteraction: true,
+                                              }}
+                                   pagination={{
+                                    clickable: true,
                                   }}
+                                  breakpoints={{
+                                    640: {
+                                      slidesPerView: 2,
+                                      spaceBetween: 20,
+                                    },
+                                    768: {
+                                      slidesPerView: 4,
+                                      spaceBetween: 40,
+                                    },
+                                    1024: {
+                                      slidesPerView: 6,
+                                      spaceBetween: 10,
+                                    },
+                                  }}
+                                  navigation={true}
+                                  modules={[Navigation,Autoplay,Pagination]}
+                                  className="mySwiper"
+                      
                                     >
                              {
 
@@ -105,16 +95,6 @@ const Category = () => {
 
                                     
                                       </SwiperSlide>
-
-                                  // <SwiperSlide key={id}>
-                                  //     <div  className="h-64 flex flex-col items-center">
-                                  //     <img className=" border-2 border-[#49A6A2] rounded-full w-40 h-40"  src={items.image} alt={items.name} id={items.id} onClick={handleImageClick}/>
-                                   
-                                  //     <p className=" text-center mt-5 ">{items.name}</p>
-                                  //     </div>
-
-                                    
-                                  //     </SwiperSlide>
                                     )
                                  })
 
@@ -129,7 +109,5 @@ const Category = () => {
 
          
     }
-
-    
 
 export default Category;

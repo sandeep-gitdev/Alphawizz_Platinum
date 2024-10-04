@@ -9,7 +9,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import {slides} from "./Img_Data.json"
+import {Img} from "./Img_Data.json"
  
 
 const Home_Img = () => {
