@@ -18,7 +18,6 @@ import Products from './Components/Products/Products'
 import Term_condition from './Components/Footer/Term_condition'
 import Privacy_Policy from './Components/Footer/Privacy_Policy'
 
-
 function App() {
  
 
@@ -32,7 +31,7 @@ function App() {
         <Route path="/Category" element={<Category />} />    
         <Route path="/CategoryAll" element={ <CategoryAll/>} />  
         <Route path="/Prouducts" element={ <Products/>} />  
-         <Route path="/FilterCategory" element={<FilterCategory />} />
+        <Route path="/FilterCategory" element={<FilterCategory />} />
         <Route path="/FilterDetails" element={<FilterDetails />} />    
         <Route path='/ShoppingCart' element={<ShoppingCart/>} /> 
         <Route path='/ContactUs' element={<ContactUs/>} /> 

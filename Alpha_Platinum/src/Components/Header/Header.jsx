@@ -13,7 +13,6 @@ import { FaPowerOff } from "react-icons/fa";
 const Header = () => {
   const [loginModal, setLoginModal] = useState(false);
   const closeModal = () => setLoginModal(false);
-  const [serachField, setSerachField] = useState("");
 
   const [categoryData, setCategoryData] = useState([]);
   const [filter, setProductFilter] = useState([]);

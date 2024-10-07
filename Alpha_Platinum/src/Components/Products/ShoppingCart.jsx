@@ -27,8 +27,8 @@ const ShoppingCart = () => {
           <h1 className="text-xl">{ProductData.name}</h1>
           <div className="flex ">
             <p>Home /</p>
-            <p>Category /</p>
-            <p>Products </p>
+            <p> Category / </p>
+            <p className="text-gray-500"> {ProductData.name} </p>
           </div>
         </div>
       </div>

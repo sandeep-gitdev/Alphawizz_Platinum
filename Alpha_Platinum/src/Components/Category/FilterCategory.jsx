@@ -55,7 +55,7 @@ const FilterCategory = () => {
                           <div className="flex ">
                           <p>Home /</p>
                           <p>Category /</p>
-                          <p>Products /</p>
+                          <p className="text-gray-500">Products </p>
                           </div>
                          </div>
                     </div>
