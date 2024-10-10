@@ -89,7 +89,7 @@ const Products = () => {
 };
 
 const ProductCard = ({ product, onImageClick }) => (
-  <div className="m-1 flex items-center justify-center flex-col border-2 border-grey w-auto rounded-md h-[300px] relative">
+  <div className="mx-6 flex items-center justify-center flex-col border-2 border-grey w-auto rounded-md h-[300px] relative">
     <img
       src={product.image}
       alt={product.name}
@@ -99,14 +99,14 @@ const ProductCard = ({ product, onImageClick }) => (
     <div className="flex gap-16 w-64 absolute top-3 left-2">
       <p className="bg-[#49A6A2] text-white rounded-r-lg text-md px-2">{product.min_max_price.discount_in_percentage
       }% OFF</p>
-      <FaRegHeart className="ml-8 text-gray-500" />
+      <FaRegHeart className="ml-20 text-gray-500" />
     </div>
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center transform hover:translate-y-[-4px] transition-transform duration-200 ease-in-out">
       <p className="p-1 text-md mt-5">{product.name}</p>
       <p className="text-lg ">₹{product.min_max_price.max_special_price.toFixed(2)}</p>
-      <button className="flex items-center border rounded-lg bg-[#49A6A2] text-white p-2 px-4">
-        <FaCartPlus />
-        Add to Cart
+      <button className="flex gap-2 items-center active:scale-50 transition-transform duration-150  rounded-lg bg-[#49A6A2] text-white py-1 px-2">
+        <FaCartPlus /> 
+        <p>Add to Cart</p>
       </button>
     </div>
   </div>

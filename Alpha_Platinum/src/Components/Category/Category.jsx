@@ -104,6 +104,7 @@ const Category = () => {
 
                         </div>
                </div>
+               <hr />
           </>
        )
 

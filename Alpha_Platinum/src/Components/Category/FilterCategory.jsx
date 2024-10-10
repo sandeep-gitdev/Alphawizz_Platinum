@@ -68,14 +68,15 @@ const FilterCategory = () => {
                                           return (
                                              <>
                                            
-                                               <div key={id} className="h-64 pt-6 mx-6">
-                     <img className=" border-2 border-[#49A6A2] rounded-full w-40 h-40"  src={item.image} alt=""
-                     id={item.id} onClick={handleImageClick}/>
+                                         <div key={id} className="h-64 pt-6 mx-6">
+                                              <img className=" border-2 border-[#49A6A2] rounded-full w-40 h-40"  
+                                                   src={item.image} alt=""
+                                                   id={item.id} 
+                                                   onClick={handleImageClick}/>
                                    
-                                      <p className=" text-center mt-5 ">{item.name}</p>
-                                      </div>
-                                      
-                                        
+                                           <p className=" text-center mt-5 ">{item.name}</p>
+                                        </div>
+         
                                     </>
                                              
                                   )

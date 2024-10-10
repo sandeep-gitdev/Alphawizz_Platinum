@@ -1,9 +1,6 @@
 import { TbBrandFacebook } from "react-icons/tb";
-import { SlSocialTwitter } from "react-icons/sl";
-import { BsInstagram } from "react-icons/bs";
-import { SlSocialYoutube } from "react-icons/sl";
-import { BsApple } from "react-icons/bs";
-import { IoLogoGooglePlaystore } from "react-icons/io5";
+import { SlSocialTwitter, SlSocialYoutube } from "react-icons/sl";
+import { BsInstagram, BsApple} from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 
@@ -23,7 +20,7 @@ const Footer = () => {
                   <ul className="grid grid-cols-2 gap-3 cursor-pointer">
                <Link to="/"><li>Home</li></Link>     
                <Link to="/Prouducts"><li>Products</li></Link> 
-               <Link to="/Login">   <li>Register</li></Link> 
+               <Link to="/Login"> <li>Register</li></Link> 
                <Link to="/ContactUs"><li>Contact Us</li></Link>  
                <Link to="/CategoryAll"><li>Category</li></Link> 
                <Link to="/Login"><li>Login</li></Link>     
@@ -48,20 +45,19 @@ const Footer = () => {
                     </div></a>   
                     </div>
 
-                  <div className="flex flex-col md:flex-row gap-5">
-                    <button className="flex items-center hover:scale-105 border rounded-lg bg-white text-black px-3 w-full md:w-auto sm:w-auto  max-w-[200px]">
+                  <div className="flex sm:flex-col gap-5 lg:flex-row">
+                    <button className="flex items-center hover:scale-105 border rounded-lg bg-white text-black px-3 max-w-[200px]  sm:w-auto md:w-auto">
                       <div className="text-4xl">
                     <BsApple className=""/>
                     </div>
                     <div className="ml-2 text-left">
-                    <p className="text-xs md:text-md sm:text-sm">Download on the</p>
+                    <p className="text-xs sm:text-sm md:text-md ">Download on the</p>
                     <p>App Store</p>
-                    </div>
+                    </div> 
                     </button>
 
-                    <button className="flex items-center hover:scale-105 border rounded-lg bg-white text-black px-3 w-full sm:w-auto">
+                    <button className="flex items-center hover:scale-105 border rounded-lg bg-white text-black px-3 max-w-[200px] sm:w-auto md:w-auto">
                     <div className="text-4xl">
-                    {/* <IoLogoGooglePlaystore className=""/> */}
                     <img src="playstore.png" alt="" className="min-w-14 h-14 p-2"/>
                     </div>
                     <div className="ml-2 text-left">
@@ -70,6 +66,7 @@ const Footer = () => {
                      </div>
                     </button>
                     </div>
+
                   </div>
             </div>
           <hr />  

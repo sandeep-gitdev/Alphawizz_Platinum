@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
-import { FaCaretDown } from "react-icons/fa";
 import Country_code from "./Country_code.json";
 import axios from "axios";
 

@@ -14,9 +14,9 @@ const Privacy_Policy = () => {
                          </div>
            </div>
 
-           <div className="flex flex-col gap-2 justify-center items-center h-[10rem] min-h-[300px]  my-4 py-5">
-                      <h1 className="text-xl font-medium">Privacy Policy</h1>
-                      <p className="w-[1300px] ">
+           <div className="flex flex-col gap-2 justify-center items-center my-4 py-5">
+                      <h1 className="text-xl font-medium text-center">Privacy Policy</h1>
+                      <p className="w-full max-w-[1300px] text-center px-4">
                         <p>Privacy policy
                           <p>Alpha Silver is Multi-vendor Application from which user can purchase the products of Ecommerce according to their requirement </p>
                         </p>

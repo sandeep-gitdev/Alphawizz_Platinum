@@ -15,9 +15,9 @@ const Term_condition = () => {
                          </div>
            </div>
 
-           <div className="flex flex-col gap-2 justify-center items-center h-[10rem] min-h-[300px]  my-4 py-5">
-                      <h1 className="text-xl font-medium">Terms & Conditions</h1>
-                      <p className="w-[1300px] ">
+           <div className="flex flex-col gap-2 justify-center items-centermy-4 py-5">
+                      <h1 className="text-xl font-medium text-center">Terms & Conditions</h1>
+                      <p className="w-full max-w-[1300px] text-center px-4 ">
                         <p>Terms and conditions.
                           <p>Alpha Silver is Multi-vendor Application from which user can purchase the products of Ecommerce according to their requirement</p>
                         </p>

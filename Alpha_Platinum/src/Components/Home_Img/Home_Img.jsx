@@ -23,7 +23,7 @@ const Home_Img = () => {
                       
 
                                     <Swiper
-                                    spaceBetween={30}
+                                    spaceBetween={3}
                                     centeredSlides={true}
                                     autoplay={{
                                       delay: 2500,
@@ -34,23 +34,13 @@ const Home_Img = () => {
                                     }}
                                     navigation={true}
                                     modules={[Autoplay, Pagination, Navigation]}
-                                    className="mySwiper"
+                                    className="mySwiper "
                                     >
                                     <SwiperSlide><img src="./Home-imgs/home-1.png" alt="" /></SwiperSlide>
                                     <SwiperSlide><img src="./Home-imgs/home-2.jpg" alt="" /></SwiperSlide>
                                     <SwiperSlide><img src="./Home-imgs/home-3.jpg" alt="" /></SwiperSlide>
                                     
-                                    </Swiper>
-
-                      
-                   
-                       {/* <img src="./Home-imgs/home-1.png" alt="" />
-                      <div className=" absolute inset-0 flex items-center justify-between text-2xl">
-                        <MdOutlineArrowBackIos className="border-2 rounded-lg bg-gray-300"/>
-                        <MdOutlineNavigateNext className="border-2 rounded-lg bg-gray-300"/> 
-
-                      
-                      </div> */}
+                                    </Swiper>                   
                     </div>
                </div>
             </>
