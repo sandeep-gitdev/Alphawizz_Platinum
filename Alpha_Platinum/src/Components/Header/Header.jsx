@@ -153,7 +153,7 @@ const Header = () => {
           {/* User login on small screens */}
           <div className="flex items-center gap-5 mb-4 md:mb-0">
             <FaRegHeart className="text-[#49A6A2] text-2xl cursor-pointer hidden md:block" />
-            <FaCartPlus className="text-[#49A6A2] text-2xl cursor-pointer" />
+        <Link to={"/Add_To_Card"}><FaCartPlus className="text-[#49A6A2] text-2xl cursor-pointer" /></Link>    
           </div>
         </div>     
       </div>

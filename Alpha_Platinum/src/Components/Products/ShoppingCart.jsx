@@ -1,7 +1,6 @@
 import { CiStar } from "react-icons/ci";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
-import ReactImageMagnify from "react-image-magnify";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -20,6 +19,13 @@ const ShoppingCart = () => {
     setNum(num - n);
   }
 
+  // const handleClick = (productId) => {
+  //   const product = productsData.flat().find(item => item.id == productId);
+  //   if (product) {
+  //     navigate("/ShoppingCart", { state: product });
+  //   }
+  // };
+
   return (
     <>
       <div className="heading  ">
@@ -27,8 +33,7 @@ const ShoppingCart = () => {
           <h1 className="text-xl">{ProductData.name}</h1>
           <div className="flex ">
             <p>Home /</p>
-            <p> Category / </p>
-            <p className="text-gray-500"> {ProductData.name} </p>
+            <p> Category / </p>             <p className="text-gray-500"> {ProductData.name} </p>
           </div>
         </div>
       </div>
@@ -48,7 +53,8 @@ const ShoppingCart = () => {
                   key={ProductData.id}
                 >
                   <div className="p-12">
-                    <ReactImageMagnify
+
+                    {/* <ReactImageMagnify
                       {...{
                         smallImage: {
                           alt: "Product Image", // Use a meaningful alt text
@@ -72,9 +78,9 @@ const ShoppingCart = () => {
                           // Ensures it appears above other elements
                         },
                       }}
-                    />
+                    /> */}
 
-                    {/* <img src={ProductData.image} id={ProductData.id} alt="" /> */}
+                    <img src={ProductData.image} id={ProductData.id} alt="" />
                   </div>
                 </div>
                 <div className=" text-3xl">
@@ -116,8 +122,8 @@ const ShoppingCart = () => {
                     placeholder="Zipcode"
                     className="border-2 mr-4 p-2 w-48"
                   />
-                  <button className="border-2 p-2 rounded-md border-[#49A6A2] text-[#49A6A2]">
-                    Check Availablitiy
+                  <button className="border-2 p-2 rounded-md border-[#49A6A2] text-[#49A6A2] hover:bg-[#49A6A2] hover:text-white">
+                   <p>Check Availablitiy</p> 
                   </button>
                 </div>
                 <div className=" border-2 w-28 flex justify-around mt-5 p-2">
@@ -125,10 +131,10 @@ const ShoppingCart = () => {
                   <button onClick={() => inc(1)}>+</button>
                 </div>
                 <div className="">
-                  <button className="mr-3 border-2 border-[#49A6A2] rounded-md p-3 text-[#49A6A2]">
+                  <button className="mr-3 border-2 border-[#49A6A2] hover:bg-[#49A6A2] hover:text-white rounded-md p-3 text-[#49A6A2]">
                     Add to cart
                   </button>
-                  <button className="mr-3 border-2 border-red-700 rounded-md p-3 text-red-700">
+                  <button className="mr-3 border-2 border-red-700 rounded-md p-3 text-red-700 hover:bg-red-700 hover:text-white">
                     Add to Favorite
                   </button>
                 </div>
